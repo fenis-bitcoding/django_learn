@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+<h1>home</h1>
+{% endblock title %}
+
+{% block content %}
+{{block.super}}
+<!-- difine url based -->
+<p><a href="{% url 'home' %}">home</a></p><br>
+<p><a href="{% url 'index' %}">index</a></p><br>
+<p><a href="{% url 'chack' %}">check</a></p><br>
+<h1>home is ready</h1><br><br>
+{% include 'include.html' with p='jjj' %}
+{% endblock content %}

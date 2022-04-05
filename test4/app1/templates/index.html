@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+<h1>index</h1>
+{% endblock title %}
+
+{% block content %}
+{{block.super}}
+<p><a href="{% url 'home' %}">home</a></p><br>
+<p><a href="{% url 'index' %}">index</a></p><br>
+<p><a href="{% url 'chack' %}">check</a></p><br>
+<h1>index is ready</h1>
+{% endblock content %}
