@@ -8,16 +8,27 @@
 </head>
 <body>
     <table>
-        
+        {% for i in form %}
         <tr>
-        
-            <td>{{form.user}}</td> 
-            <td>{{form.roll}}</td> 
-            <td>{{form.city}}</td> 
-            <td>{{form.marks}}</td>  
-            <td>{{form.pass_date}}</td>
+            <td>{{i.id}}</td>
+            <td>{{i.user}}</td> 
+            <td>{{i.roll}}</td> 
+            <td>{{i.city}}</td> 
+            <td>{{i.marks}}</td>  
+            <td>{{i.pass_date}}</td>
+            
         </tr>
-
+        {% endfor %}
     </table>
+
+    AVG DATA   {{avg.marks__avg}}
+    <br>
+    MIN DATA   {{min.marks__min}}   
+    <br>
+    MAX DATA   {{max.marks__max}}    
+    <br>
+    SUM DATA   {{sum.marks__sum}}
+    <br>
+    COUNT DATA   {{count.marks__count}}                   
 </body>
 </html>
