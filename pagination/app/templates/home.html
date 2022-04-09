@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <table>
+
+        {% for i in form %}
+            <h1>{{i.title}}</h1>
+            <p>{{i.dec}}</p>
+            <small>{{i.publish_date}}</small>
+        {% endfor %}
+        <div>
+            <span>
+                {% if form.has_previous %}
+                    <a href="?page={{form.previous_page_number}}">Previous</a>
+                {% endif %}
+                {% for i in form.paginator.page_range %}
+                    {% if form.number == i %}
+                    <span>{{ i }} </span>
+                    {% else %}
+                    <a href="?page={{ i }}">{{ i }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if form.has_next %}
+                    <a href="?page={{form.next_page_number}}">Next</a>
+                {% endif %}
+
+            </span>
+        </div>
+    </table>
+</body>
+</html>
